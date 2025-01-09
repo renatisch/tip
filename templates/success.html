@@ -1,0 +1,31 @@
+{% extends "template.html" %}
+
+{% block content %}
+<h2>Amazon Trusted Identity Propagation Demo - S3 credentials</h2>
+
+<div>
+    <p>Hello, you have been successfully authenticated!</p>
+    <p>Your Azure AD access token is 
+        <p><b>{{ azure_ad_access_token }}</b></p>
+    </p>
+    <p>Your Azure AD id token is 
+        <p><b>{{ azure_ad_id_token }}</b></p>
+    </p>
+    <p>Your AWS access key id is 
+        <p><b>{{ access_key_id }}</b></p>
+    </p>
+    <p>Your AWS secret access key is 
+        <p><b>{{ secret_access_key }}</b></p>
+    </p>
+    <p>Your AWS session token is 
+        <p><b>{{session_token}}</b></p>
+    </p>
+    <form method="get" action="/">
+        <button id="login-button" class="btn btn-primary" type="submit">Retry</button>
+    </form>
+    <form method="post" action="/data/read">
+        <input type="hidden" name="azure_ad_id_token" value="{{ azure_ad_id_token }}">
+        <button id="login-button" class="btn btn-primary" type="submit">Read Redshift users</button>
+    </form>    
+</div>
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends "template.html" %} {% block content %}
+<h2>Hello, you have been successfully authenticated!</h2>
+<div>
+  <p>Your Redshift users are listed here:
+        <p><b>{{ users }}</b></p>
+    </p>
+  <form method="get" action="/">
+    <button id="login-button" class="btn btn-primary" type="submit">Retry</button>
+</form>
+</div>
+{% endblock content %}

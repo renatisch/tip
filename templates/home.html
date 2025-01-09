@@ -1,0 +1,17 @@
+{% extends "template.html" %}
+
+{% block content %}
+<h2>Amazon Trusted Identity Propagation Demo</h2>
+
+<div>
+    <p>Hello!</p>
+    <p>This sample web application conducts authentication using AWS Trusted Identity Propagation </p>
+    <p>When you click the login button below, you'll be redirected to EntraID login page. After authentication, you'll return to 
+        this page. Your authorization code will then securely generate identity-aware S3 and/or Redshift credentials.
+    </p>
+</div>
+
+<form method="get" action="login">
+    <button id="login-button" class="btn btn-primary" type="submit">Login</button>
+</form>
+{% endblock content %}
